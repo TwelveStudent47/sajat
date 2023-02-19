@@ -9,6 +9,7 @@
     --scroll-bar-color: hsl(250, 12%, 90%);
     --scroll-thumb-color: hsl(250, 12%, 80%);
     --text-color: hsl(250, 8%, 45%);
+    --text-color-light: hsl(250, 8%, 65%);
     --title-color: hsl(250, 8%, 15%);
     --body-font: 'Poppins', sans-serif;
     --big-font-size: 2rem;
@@ -307,6 +308,39 @@ img{
 
 .button-flex{
     display: inline-flex;
-    align-items: center;
-    
+    align-items: center;   
+}
+
+.about_img{
+    width: 200px;
+    border-radius: .5rem;
+    justify-self: center;
+    align-self: center;
+}
+
+.about_description{
+    text-align: center;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about_info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about_info-title{
+    font-size: var(--h2-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.about_info-name{
+    font-size: var(--smaller-font-size);
+}
+
+.about_info-title,
+.about_info-name{
+    display: block;
+    text-align: center;
 }
