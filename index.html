@@ -295,7 +295,70 @@
                 </div>
             </div>
         </section>
+        <section class="contact section" id="contact">
+            <h2 class="section_title">Lépj kapcsolatba velünk</h2>
+            <span class="section_subtitle">Valami kérdésed van? Írj nekünk!</span>
+            <div class="fcf-body center">          
+                <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">                   
+                    <div class="fcf-form-group">
+                        <label for="Name" class="fcf-label">Your name</label>
+                        <div class="fcf-input-group">
+                            <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                        </div>
+                    </div>
+                    <div class="fcf-form-group">
+                        <label for="Email" class="fcf-label">Your email address</label>
+                        <div class="fcf-input-group">
+                            <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                        </div>
+                    </div>           
+                    <div class="fcf-form-group">
+                        <label for="Message" class="fcf-label">Your message</label>
+                        <div class="fcf-input-group">
+                            <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                        </div>
+                    </div>
+                    <div class="fcf-form-group">
+                        <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+                    </div>            
+                </form>
+                </div>
+            
+            </div>
+        </section>
     </main>
+    <footer class="footer">
+        <div class="footer_bg">
+            <div class="footer_container container grid">
+                <div>
+                    <h1 class="footer_title">Web <span class="s-primary">Ease</span></h1>
+                </div>
+                <ul class="footer_links">
+                    <li>
+                        <a href="#services" class="footer_link">Szolgáltatásaink</a>
+                    </li>
+                    <li>
+                        <a href="#portfolio" class="footer_link">Referenciáink</a>
+                    </li>
+                    <li>
+                        <a href="#contact" class="footer_link">Kapcsolat</a>
+                    </li>
+                </ul>
+                <div class="footer_socials">
+                    <a href="https://www.facebook.com/profile.php?id=100080211966632" class="footer_social" target="_blank">
+                        <i class="uil uil-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/lczk_kevin/" class="footer_social" target="_blank">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/kevin-laczkó-938043267/" class="footer_social" target="_blank">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer_copy">&#169; Web Ease. Minden jog fent tartva!</p>
+        </div>
+    </footer>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
