@@ -344,3 +344,11 @@ img{
     display: block;
     text-align: center;
 }
+
+.border-0{
+    border: none;
+}
+
+.fs{
+    font-size: var(--h3-font-size);
+}
