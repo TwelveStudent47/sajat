@@ -2,8 +2,10 @@
 
 :root{
     --header-height: 3rem;
-    --first-color: #2AD735;
+    --first-color: hsl(124, 68%, 50%);
+    --first-color-button: hsl(124, 68%, 50%);
     --first-color-alt: hsl(124, 53%, 40%);
+    --first-color-alt-button: hsl(124, 53%, 40%);
     --body-color: hsl(250, 60%, 99%);
     --container-color: #fff;
     --scroll-bar-color: hsl(250, 12%, 90%);
@@ -11,6 +13,7 @@
     --text-color: hsl(250, 8%, 45%);
     --text-color-light: hsl(250, 8%, 65%);
     --title-color: hsl(250, 8%, 15%);
+    --border-color: hsl(210, 14%, 83%);
     --body-font: 'Poppins', sans-serif;
     --big-font-size: 2rem;
     --h1-font-size: 1.5rem;
@@ -594,9 +597,9 @@ img{
     font-weight: 400;
     line-height: 1.5;
     color: var(--text-color);
-    background-color: #fff;
+    background-color: var(--input-color);
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid var(--border-color);
     outline: none;
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -658,21 +661,21 @@ label.fcf-label {
 
 .fcf-btn-primary {
     color: #fff;
-    background-color: var(--first-color);
-    border-color: var(--first-color);
+    background-color: var(--first-color-button);
+    border-color: var(--first-color-button);
     transition: all ease .3s;
 }
 
 .fcf-btn-primary:hover {
     color: #fff;
-    background-color: var(--first-color-alt);
-    border-color: var(--first-color-alt);
+    background-color: var(--first-color-alt-button);
+    border-color: var(--first-color-alt-button);
 }
 
 .fcf-btn-primary:focus, .fcf-btn-primary.focus {
     color: #fff;
-    background-color: var(--first-color);
-    border-color: var(--first-color-alt);
+    background-color: var(--first-color-button);
+    border-color: var(--first-color-alt-button);
     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
 }
 
@@ -793,6 +796,10 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
     align-items: center;
 }
 
+.mt{
+    margin-top: var(--mb-1-5);
+}
+
 .change-theme{
     font-size: 1.25rem;
     color: var(--title-color);
@@ -813,6 +820,9 @@ body.dark-theme{
     --container-color: hsl(250, 29%, 16%);
     --scroll-bar-color: hsl(250, 12%, 48%);
     --scroll-thumb-color: hsl(250, 12%, 36%);
+    --border-color: hsl(250, 29%, 14%);
+    --first-color-button: hsl(124, 53%, 40%);
+    --first-color-alt-button: hsl(124, 68%, 50%);
 }
 
 ::-webkit-scrollbar{
