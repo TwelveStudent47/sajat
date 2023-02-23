@@ -109,3 +109,25 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+function showForm(activity) {
+    let form = `
+        <form class="price_form">
+            <h2 class="price_form-title">${activity} árajánlat kérés</h2>
+            <div class="row">
+                <div class="col>
+                    <label for="name">Név:</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">E-mail:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+            </div>
+            <label for="phone">Telefonszám:</label>
+            <input type="text" id="phone" name="phone" required>
+            <label for="message">Üzenet:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <input type="submit" class="button button-flex" value="Küldés">
+        </form>
+    `;
+    document.getElementById('form-container').innerHTML = form;
+}

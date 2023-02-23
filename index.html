@@ -287,8 +287,15 @@
             </div>
         </section>
         <section class="price section" id="price">
+            <h2 class="section_title">Árajánlat</h2>
+            <span class="section_subtitle">Válassz a következő tevékenységek közül:</span>
             <div class="container grid">
-                <h2 class="section_title">Árajánlat</h2>
+                <ul class="price_list">
+                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('Webfejlesztés')">Webfejlesztés</a></li>
+                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('rendszergazdasag')">Rendszergazdaság</a></li>
+                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('szerviz')">Szervizelés</a></li>
+                </ul>
+                <div id="form-container"></div>
             </div>
         </section>
         <section class="contact section" id="contact">
