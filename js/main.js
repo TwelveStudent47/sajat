@@ -114,19 +114,92 @@ function showForm(activity) {
     let form = `
         <form class="price_form">
             <h2 class="price_form-title">${activity} árajánlat kérés</h2>
-            <div class="row">
-                <div class="col>
-                    <label for="name">Név:</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">E-mail:</label>
-                    <input type="text" id="email" name="email" required>
-                </div>
-            </div>
+            <label for="name">Név:</label>
+            <input type="text" id="name" name="name"><br>
+          
             <label for="phone">Telefonszám:</label>
-            <input type="text" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone"><br>
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+          
+            <label for="type">Milyen típusú oldal legyen?</label>
+            <select id="type" name="type">
+              <option value="">- Válassz egy típust -</option>
+              <option value="bemutato">Bemutatkozó oldal</option>
+              <option value="webshop">Webshop</option>
+              <option value="uzleti">Üzleti oldal</option>
+              <option value="portfolio">Portfólió oldal</option>
+              <option value="blog">Blog</option>
+              <option value="egyeb">Egyéb</option>
+              <option value="javaslat">Javaslatot kérek</option>
+            </select><br>
+          
+            <label for="menu">Hány menü pont legyen?</label>
+            <select id="menu" name="menu">
+              <option value="">- Válassz egy lehetőséget -</option>
+              <option value="1">1 db</option>
+              <option value="2">2 db</option>
+              <option value="3">3 db</option>
+              <option value="4">4 db</option>
+              <option value="5">5 db</option>
+              <option value="egyeb">Egyéb</option>
+              <option value="javaslat">Javaslatot kérek</option>
+            </select><br>
+          
+            <label for="subpages">Hány aloldal legyen?</label>
+            <select id="subpages" name="subpages">
+              <option value="">- Válassz egy lehetőséget -</option>
+              <option value="1">1 db</option>
+              <option value="2">2 db</option>
+              <option value="3">3 db</option>
+              <option value="4">4 db</option>
+              <option value="5">5 db</option>
+              <option value="tobb">Több</option>
+              <option value="javaslat">Javaslatot kérek</option>
+            </select><br>
+          
+            <label for="seo">SEO szükséges?</label>
+            <select id="seo" name="seo">
+              <option value="">- Válassz egy opciót -</option>
+              <option value="igen">Igen</option>
+              <option value="nem">Nem</option>
+              <option value="javaslat">Javaslatot kérek</option>
+            </select><br>
+          
+            <label for="maintenance">Szükséges a későbbiekben weboldal karbantartás?</label>
+            <select id="maintenance" name="maintenance">
+              <option value="">- Válassz egy opciót -</option>
+              <option value="igen">Igen</option>
+              <option value="nem">Nem</option>
+              <option value="javaslat">Javaslatot kérek</option>
+            </select><br>
+
             <label for="message">Üzenet:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-            <input type="submit" class="button button-flex" value="Küldés">
+              
+            <textarea id="message" name="message" rows="5" cols="75"></textarea><br>
+                
+            <input type="submit" class="button button-flex price_button" value="Küldés">
+        </form>
+    `;
+    document.getElementById('form-container').innerHTML = form;
+}
+
+function showForn(activity) {
+    let form = `
+        <form class="price_form">
+            <h2 class="price_form-title">${activity} árajánlat kérés</h2>
+
+        </form>
+    `;
+    document.getElementById('form-container').innerHTML = form;
+}
+
+function showFort(activity) {
+    let form = `
+        <form class="price_form">
+            <h2 class="price_form-title">${activity} árajánlat kérés</h2>
+
         </form>
     `;
     document.getElementById('form-container').innerHTML = form;

@@ -821,6 +821,46 @@ input[type="submit"].fcf-btn-block, input[type="reset"].fcf-btn-block, input[typ
 
 .price_form{
     background-color: var(--container-color);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+}
+
+.price_form
+label{
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.price_form
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.price_form
+textarea {
+    resize: vertical;
+}
+
+.price_button{
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.price_form-title{
+    text-align: center;
 }
 
 .change-theme{

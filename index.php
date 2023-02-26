@@ -1,3 +1,51 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+  // Eltároljuk a form adatait változókban
+  $name = $_POST['name'];
+  $phone = $_POST['phone'];
+  $email = $_POST['email'];
+  $type = $_POST['type'];
+  $menu = $_POST['menu'];
+  $subpages = $_POST['subpages'];
+  $seo = $_POST['seo'];
+  $maintenance = $_POST['maintenance'];
+  $message = $_POST['message'];
+
+  // Ellenőrizzük, hogy minden kötelező mező ki van-e töltve
+  if (empty($name) || empty($email) || empty($message)) {
+    echo 'Kérjük, töltse ki a kötelező mezőket.';
+    exit;
+  }
+
+  // Ellenőrizzük az e-mail cím formátumát
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo 'Kérjük, adjon meg egy érvényes e-mail címet.';
+    exit;
+  }
+
+  // A címzett e-mail címe
+  $to = 'info@webease.hu';
+
+  // A levél tárgya
+  $subject = 'Új üzenet a weboldalról: ' . $name;
+
+  // A levél tartalma
+  $body = "Név: $name\nTelefonszám: $phone\nE-mail: $email\nTípus: $type\nMenüpontok: $menu\nAloldalak száma: $subpages\nSEO szükséges: $seo\nKarbantartás szükséges: $maintenance\n\nÜzenet:\n$message";
+
+  // A levél fejléce
+  $headers = "From: $name <$email>\r\n";
+  $headers .= "Reply-To: $email\r\n";
+  $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
+
+  // Elküldjük az e-mailt
+  if (mail($to, $subject, $body, $headers)) {
+    echo 'Az üzenet elküldve!';
+  } else {
+    echo 'Hiba történt az üzenet elküldése közben.';
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -292,8 +340,8 @@
             <div class="container grid">
                 <ul class="price_list">
                     <li><a href="#price" class="button button-flex price_button" onclick="showForm('Webfejlesztés')">Webfejlesztés</a></li>
-                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('rendszergazdasag')">Rendszergazdaság</a></li>
-                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('szerviz')">Szervizelés</a></li>
+                    <li><a href="#price" class="button button-flex price_button" onclick="showForn('Rendszergazdaság')">Rendszergazdaság</a></li>
+                    <li><a href="#price" class="button button-flex price_button" onclick="showFort('Szervizelés')">Szervizelés</a></li>
                 </ul>
                 <div id="form-container"></div>
             </div>
