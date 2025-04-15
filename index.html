@@ -1,51 +1,4 @@
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-  // Eltároljuk a form adatait változókban
-  $name = $_POST['name'];
-  $phone = $_POST['phone'];
-  $email = $_POST['email'];
-  $type = $_POST['type'];
-  $menu = $_POST['menu'];
-  $subpages = $_POST['subpages'];
-  $seo = $_POST['seo'];
-  $maintenance = $_POST['maintenance'];
-  $message = $_POST['message'];
-
-  // Ellenőrizzük, hogy minden kötelező mező ki van-e töltve
-  if (empty($name) || empty($email) || empty($message)) {
-    echo 'Kérjük, töltse ki a kötelező mezőket.';
-    exit;
-  }
-
-  // Ellenőrizzük az e-mail cím formátumát
-  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo 'Kérjük, adjon meg egy érvényes e-mail címet.';
-    exit;
-  }
-
-  // A címzett e-mail címe
-  $to = 'info@webease.hu';
-
-  // A levél tárgya
-  $subject = 'Új üzenet a weboldalról: ' . $name;
-
-  // A levél tartalma
-  $body = "Név: $name\nTelefonszám: $phone\nE-mail: $email\nTípus: $type\nMenüpontok: $menu\nAloldalak száma: $subpages\nSEO szükséges: $seo\nKarbantartás szükséges: $maintenance\n\nÜzenet:\n$message";
-
-  // A levél fejléce
-  $headers = "From: $name <$email>\r\n";
-  $headers .= "Reply-To: $email\r\n";
-  $headers .= "Content-type: text/plain; charset=UTF-8\r\n";
-
-  // Elküldjük az e-mailt
-  if (mail($to, $subject, $body, $headers)) {
-    echo 'Az üzenet elküldve!';
-  } else {
-    echo 'Hiba történt az üzenet elküldése közben.';
-  }
-}
-?>
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -286,17 +239,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span class="section_subtitle">Legújabb munkánik</span>
             <div class="portfolio_container container swiper-container">
                 <div class="swiper-wrapper">
-                    <!--1-->
-                    <div class="portfolio_content grid swiper-slide">
-                        <img src="images/logof-removebg-preview 2.png" class="portfolio_img" alt="Fülemüle házak logója">
-                        <div class="portfolio_data">
-                            <h3 class="portfolio_title">Fülemüle Vendégházak</h3>
-                            <a href="https://www.fulemulehazak.hu" target="_blank" class="button button-flex button-small portfolio_button">
-                                Megnézem
-                                <i class="uil uil-arrow-right button_icon"></i>
-                            </a>
-                        </div>
-                    </div>
                     <!--2-->
                     <div class="portfolio_content grid swiper-slide">
                         <img src="images/logo 2 2.png" class="portfolio_img" alt="Vásárolj szabadon logója">
@@ -325,25 +267,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="project_data">
                         <h2 class="project_title">Szeretnél egy weboldalt?</h2>
                         <p class="project_description">Kérj egy árajánlatot és a lehető leggyorsabban elküldjük neked.</p>
-                        <a href="#price" class="button button-flex">
+                        <a href="#contact" class="button button-flex">
                             Árajánlat
                             <i class="uil uil-pricetag-alt project_icon button_icon"></i>
                         </a>
                     </div>
                     <img src="images/code.jpeg" alt="Egy HTML fájl kódja" class="project_img">
                 </div>
-            </div>
-        </section>
-        <section class="price section" id="price">
-            <h2 class="section_title">Árajánlat</h2>
-            <span class="section_subtitle">Válassz a következő tevékenységek közül:</span>
-            <div class="container grid">
-                <ul class="price_list">
-                    <li><a href="#price" class="button button-flex price_button" onclick="showForm('Webfejlesztés')">Webfejlesztés</a></li>
-                    <li><a href="#price" class="button button-flex price_button" onclick="showForn('Rendszergazdaság')">Rendszergazdaság</a></li>
-                    <li><a href="#price" class="button button-flex price_button" onclick="showFort('Szervizelés')">Szervizelés</a></li>
-                </ul>
-                <div id="form-container"></div>
             </div>
         </section>
         <section class="contact section" id="contact">
